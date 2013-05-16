@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<h3>Get info</h3>
+	<button id="getit">Press</button>
+	
+
+	<script type="text/javascript">
+		var getit = document.getElementById('getit');
+
+		var myProfile = 
+		 {"firstName": "Liz", 
+		  "lastName": "Howard",
+		  "cats": ["Tribbles", "Jean Claws"]};
+
+		  getit.onclick = function(){
+		  	console.log('My cats are ' + myProfile.cats.join(','));
+			var p = document.createElement('p');
+			p.innerHTML = myProfile.firstName + ' ' + myProfile.lastName;
+			p.innerHTML += 'My cats are ' + myProfile.cats.join(',');
+			document.body.appendChild(p); // this line is a must
+		};
+
+		
+
+	</script>
+</body>
+</html>

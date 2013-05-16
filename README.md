@@ -1,0 +1,1 @@
+Catch all for javascript exercises that I have been doing intensively.
