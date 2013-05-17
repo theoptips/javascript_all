@@ -53,7 +53,24 @@ console.log(bigoNSqr(oNSqr));
 /*     +      root 2^0  
       + +		2^1 | depth level 1
    + +   + +	2^2 | depth level 2
-  ++ ++  ++ ++	2^3 or 2^2 * 2 (double)
+  ++ ++  ++ ++	2^3 or 2^2 * 2 (double)*/
+var o2PowerN =  3; 
+var resultArray2PowerN = [];
+var level0 = [0];
+var counter = 0;
+resultArray2PowerN.push(level0);
+function bigo2PowerN(o2PowerN){
+	for(var level=1; level <= o2PowerN; level++){
+		resultArray2PowerN[level] = [];
+		counter++;
+		resultArray2PowerN[level].push(counter);
+		counter++;
+		resultArray2PowerN[level].push(counter);
+	}
+	return resultArray2PowerN;
+}
+
+console.log(bigo2PowerN(o2PowerN));
 
 /*
 http://www.perlmonks.org/?node_id=227909
