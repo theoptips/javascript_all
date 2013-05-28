@@ -33,7 +33,7 @@ console.log(bigoN(oN));
 // common algoirthm involving loops, nested iterations over the data set, deeper nesting result in O(N^3) and N4 etc.
 
 
-var oNSqr = 5;
+var oNSqr = 6;
 var resultArrayNSqr = [];
 function bigoNSqr(oNSqr){
 	for(var counterNSqr = 0 ; counterNSqr < oNSqr; counterNSqr++){
@@ -54,23 +54,70 @@ console.log(bigoNSqr(oNSqr));
       + +		2^1 | depth level 1
    + +   + +	2^2 | depth level 2
   ++ ++  ++ ++	2^3 or 2^2 * 2 (double)*/
-var o2PowerN =  3; 
+var o2PowerN =  5; 
 var resultArray2PowerN = [];
 var level0 = [0];
-var counter = 0;
-resultArray2PowerN.push(level0);
-function bigo2PowerN(o2PowerN){
-	for(var level=1; level <= o2PowerN; level++){
-		resultArray2PowerN[level] = [];
-		counter++;
-		resultArray2PowerN[level].push(counter);
-		counter++;
-		resultArray2PowerN[level].push(counter);
+var optcounter = 0;
+// resultArray2PowerN.push(level0);
+// function bigo2PowerN(o2PowerN){
+// 	for(var level=1; level <= o2PowerN; level++){
+// 		resultArray2PowerN[level] = [];
+// 		counter++;
+// 		resultArray2PowerN[level].push(counter);
+// 		counter++;
+// 		resultArray2PowerN[level].push(counter);
+// 	}
+// 	return resultArray2PowerN;
+// }
+
+// console.log(bigo2PowerN(o2PowerN));
+
+function big02PowerNRecur(o2PowerN){
+	// resultArray2PowerN[o2PowerN] = []
+	var result;
+	if (o2PowerN === 0) {
+		// resultArray2PowerN[o2PowerN].push(0);
+		result = 1;
+		
+	} else {
+		result = 2 * big02PowerNRecur(o2PowerN-1);
+		// iterate through the numbers
+		// take the range from the last number of the previous selection
+
 	}
-	return resultArray2PowerN;
+
+	// resultArray2PowerN.push(result); // iteration of optcounter 3 levels + root
+	resultArray2PowerN[o2PowerN] = '';
+	for(var i = 0; i < result; i++){
+		
+		resultArray2PowerN[o2PowerN] +='+';
+		optcounter++;
+
+	}
+	// console.log("In big02PowerNRecur function");
+	// console.log(resultArray2PowerN);
+	console.log("This is counter: "+ optcounter);
+	return result;
 }
 
-console.log(bigo2PowerN(o2PowerN));
+
+
+big02PowerNRecur(o2PowerN);
+console.log(resultArray2PowerN);
+for(var i = 0; i< resultArray2PowerN.length; i++){
+	console.log(resultArray2PowerN[i].length);
+	// for(var j=0; j < resultArray2PowerN[i].length; j++){
+	// 	console.log();
+	// }
+}
+
+
+
+
+// level 1 put down 1 and 2
+// level two put down 3 4 5 6 
+// level 3 put down 7 8 9 10 11 12 13 14
+
 
 /*
 http://www.perlmonks.org/?node_id=227909
